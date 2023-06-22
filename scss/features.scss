@@ -1,0 +1,66 @@
+.features {
+    padding: 64px 0 40px;
+    &__container {
+        padding-bottom: 80px;
+        border-bottom: #33363A 1px solid;
+    }
+    &__head {
+        margin: 0 auto;  
+    }
+    &__title {
+        text-align: center;
+        margin: 0 0 17px;
+    }
+    &__desc {
+        text-align: center;
+        margin: 0 0 80px;
+    }
+    &__instants {
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 64px;
+        @media screen and (max-width: 992px) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+    }
+    &__instant{
+        &__circle {
+            display: flex; // 3 строки почему-то центрируют внутреннюю картинку
+            align-items: center; //
+            justify-content: center; // 
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 16px; // центрирует сам кружочек внутри блока
+            border-radius: 32px;
+            background-color: #5D5DFF;
+            & > img {
+                width: 20px;
+                margin: 0;
+            }
+        }
+        &__title {
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 1.4167;
+            color: #D9E3EA;
+            margin: 0;
+            letter-spacing: -0.25px;
+            @media screen and (max-width: 992px) {
+                font-size: 20px;
+            }
+            @media screen and (max-width: 450px) {
+                font-size: 16px;
+            }
+        }
+        
+    }
+    &__instant__title {
+        text-align: center;
+        margin-bottom: 8px;
+    }
+    &__instant__desc {
+        text-align: center;
+    }
+}

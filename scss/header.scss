@@ -1,0 +1,96 @@
+.header {
+    position: fixed; /* фиксированная сверху позиция */
+    left: 0;
+    top: 20px; /* отступ у кнопки от верхнего края по дизайну */
+    width: 100%;
+    z-index: 5;
+    &__container {
+        max-width: 1440px;
+        display: block;
+        position: relative;
+        z-index: 5;
+    }
+    &__row {
+        display: flex;                  /* Инструмент для размещения */
+        align-items: center;            /* Выравнивание элементов по оси Y */
+        justify-content: space-between; /* Выравнивание элементов по оси X */
+        position: relative;
+    }
+    &__logo {
+        display: flex; /* Чтобы высота картинки и текста не разъезжались*/
+        & > img {
+            width: 32px;
+            height: 32px;
+        }
+    }
+    &__behind {
+        position: absolute;
+        top: -20px;
+        right: -16.45%;
+        width: 45%;
+        height: 1500%;
+        background-image: url(../images/Header_waves_1.svg);
+        background-size: 65%;
+        background-repeat: no-repeat;
+    }
+    &__barmenu {
+        display: none;
+        @media screen and (max-width: 992px) {
+            display: block;
+            width: 30px;
+            height: 30px;
+            -webkit-mask-image: url(../images/bars-solid.svg);
+            -webkit-mask-repeat: no-repeat;
+            -webkit-mask-size: contain;
+            -webkit-mask-position: center;
+            background-color: #FFFFFF;
+            margin: 0; /*хотя у меня у этого блока нет ни маргинов, ни бордера*/
+            border: none;
+            &--active {
+                -webkit-mask-image: url(../images/x-solid.svg);
+            }
+        }
+    }
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    &__link {
+        display: inline-block;
+        cursor: pointer;
+        margin: 0;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #C5D2DC;
+        transition: 0.3s transform;
+        &:not(:last-child) {
+            margin-right: 48px;
+        }
+        @media screen and (max-width: 992px) {
+            font-size: 16px;
+            display: col;
+            &:not(:last-child) {
+                margin-right: 0;
+                margin-bottom: 10px;
+            };
+        }
+    }
+    &__btn {
+        cursor: pointer;
+        margin: 0;
+        padding: 8px 20px;
+    }
+    @media screen and (max-width: 992px) {
+        flex-direction: column;
+        position: absolute;
+        top: 40px;
+        left: 50%; /* смещает на 50% без учета длины самого смещаемого блока*/
+        transform: translateX(-50%) translateY(-200px); /* смещает на -50% от длины самого смещаемого блока по оси X (влево)*/
+        transition: 0.5s transform;
+        &--active {
+            transform: translateX(-50%); /* смещает на -50% от длины самого смещаемого блока по оси X (влево)*/
+        }
+    }
+}

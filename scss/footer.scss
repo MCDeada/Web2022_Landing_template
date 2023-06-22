@@ -1,0 +1,142 @@
+.footer {
+    padding-bottom: 64px;
+    background-color: #161719; /*так как это не section, а footer, надо цвет тут задать*/
+    &__block {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        @media screen and (max-width: 552px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    &__logo {
+        margin-bottom: 14px;
+        width: 32px;
+        height: 32px;
+        & > img {
+            width: 32px;
+            height: 32px;
+        }
+    }
+    &__desc,
+    &__copyright {
+        font-weight: 400;
+        color: #9BA9B4;
+    }
+    &__desc {
+        display: block;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: -0.25px;
+        margin: 0 0 63px;
+        @media screen and (max-width: 992px) {
+            font-size: 14px;
+        }
+        @media screen and (max-width: 450px) {
+            font-size: 12px;
+        }
+    }
+    &__copyright {
+        display: block;
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.5714;
+        @media screen and (max-width: 992px) {
+            font-size: 12px;
+        }
+        @media screen and (max-width: 450px) {
+            font-size: 11px;
+        }
+    }
+    &__column {
+        &__table {
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 48px;
+            @media screen and (max-width: 992px) {
+                grid-template-columns: repeat(1, 1fr);
+                gap: 40px;
+                margin-bottom: 48px;
+            }
+        }
+    }
+    &__bullets {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        & > li {
+            margin: 0;         
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1.5714;
+            color: #9BA9B4;
+            &:first-child {
+                font-weight: 500;
+                color: #D9E3EA;
+            }
+            &:not(:last-child) {
+                margin-bottom: 4px;
+            }
+            @media screen and (max-width: 992px) {
+                font-size: 12px;
+            }
+            @media screen and (max-width: 450px) {
+                font-size: 11px;
+            }
+        }
+    }
+    &__socials {
+        display: flex;
+        justify-content: right;
+    }
+    &__social {
+        width: 32px;
+        height: 32px;
+        border-radius: 16px;
+        background-color: #25282C;
+        &:not(:last-child) {
+            margin-right: 16px;
+        }
+        &:nth-child(1) {
+            padding: 10px 8px;
+        }
+        &:nth-child(2) {
+            padding: 8.2px 8px;
+        }
+        &:nth-child(3) {
+            padding: 8px;
+        }
+        &:nth-child(4) {
+            padding: 8px;
+        }
+        &:nth-child(5) {
+            padding: 8px;
+        }
+        &__ref {
+            & > img {
+                &:nth-child(1) {
+                    width: 16px;
+                    height: 13px;
+                }
+                &:nth-child(2) {
+                    width: 16.1px;
+                    height: 15.62px;
+                }
+                &:nth-child(3) {
+                    width: 10px;
+                    height: 16px;
+                }
+                &:nth-child(4) {
+                    width: 16px;
+                    height: 16px;
+                }
+                &:nth-child(5) {
+                    width: 16.1px;
+                    height: 16px;
+                }
+            }
+        }
+    }
+}

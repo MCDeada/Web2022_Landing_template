@@ -1,0 +1,91 @@
+.feedback {
+    padding: 80px 0;
+    @media screen and (max-width: 992px) {
+        padding: 30px 0;
+    }
+    &__title {
+        margin-bottom:16px;
+    }
+    &__title,
+    &__desc {
+        text-align: center;
+    }
+    &__desc {
+        margin-bottom: 80px;
+    }
+    &__block {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        @media screen and (max-width: 992px) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        @media screen and (max-width: 552px) {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 24px;
+        }
+    }
+    &__item {
+        padding: 24px 24px 20px;
+        background-color: #25282C;
+        &__head {
+            margin-bottom: 16px;
+            & > img {
+                &:first-child {
+                    width: 48px;
+                    height: 48px;          
+                }
+                &:last-child {
+                    width: 24px;
+                    height: 18px;
+                    position: relative;
+                    left: -16px;
+                    top: -30px;
+                }
+            }
+        }
+        &__body {
+            padding-bottom: 24px;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.5;
+            letter-spacing: -0.25px;
+            color: #9BA9B4;
+            border-bottom: #707D86 1px solid;
+            margin-bottom: 20px;
+            @media screen and (max-width: 992px) {
+                font-size: 16px;
+            }
+            @media screen and (max-width: 450px) {
+                font-size: 14px;
+            }
+        }
+        &__footer {
+            &__text{
+                display: inline-block;
+                margin: 0;
+                font-size: 18px;
+                line-height: 1.5;
+                letter-spacing: -0.25px;
+                font-weight: 500;  
+                &:nth-child(1){     
+                    color: #D9E3EA;
+                }
+                &:nth-child(2){
+                    font-weight: 400;
+                    color: #33363A;
+                }
+                &:nth-child(3){
+                    color: #5D5DFF;
+                }
+                @media screen and (max-width: 992px) {
+                    font-size: 16px;
+                }
+                @media screen and (max-width: 450px) {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
